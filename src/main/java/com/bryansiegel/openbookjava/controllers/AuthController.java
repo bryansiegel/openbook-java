@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class AuthController {
 
     @GetMapping("/login")
-public String login() {
+    public String login() {
 
-    return "admin/login";
-}
+        return "admin/login";
+    }
 
-@GetMapping("admin/dashboard")
-public String dashboard() {
+    @GetMapping("admin/dashboard")
+    public String dashboard() {
         return "admin/dashboard";
-}
+    }
 }
