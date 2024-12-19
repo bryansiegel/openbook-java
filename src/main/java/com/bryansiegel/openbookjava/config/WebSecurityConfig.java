@@ -18,11 +18,12 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/", "/login", "/css/*", "/js/*").permitAll()
-                        .anyRequest().authenticated()
+                        .requestMatchers("/admin/dashboard").authenticated()
+                        .anyRequest().permitAll()
                 )
                 .formLogin((form) -> form
                         .loginPage("/login")
+                        .failureUrl("/login-error")
                         .permitAll()
                         .defaultSuccessUrl("/admin/dashboard")
                 )
