@@ -10,8 +10,12 @@ public class AuthController {
 
     @GetMapping("/login")
     public String login() {
-
         return "admin/login";
+    }
+
+    @GetMapping("/login-error")
+    public String loginError() {
+        return "admin/login-error";
     }
 
     @GetMapping("admin/dashboard")
