@@ -17,7 +17,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
+        return http
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/admin/dashboard").authenticated()
                         .anyRequest().permitAll()
@@ -28,9 +28,8 @@ public class SecurityConfig {
                         .permitAll()
                         .defaultSuccessUrl("/admin/dashboard")
                 )
-                .logout(LogoutConfigurer::permitAll);
-
-        return http.build();
+                .logout(LogoutConfigurer::permitAll)
+                .build();
     }
 
     @Bean
