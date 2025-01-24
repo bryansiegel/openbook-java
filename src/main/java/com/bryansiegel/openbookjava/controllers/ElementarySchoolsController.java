@@ -22,7 +22,7 @@ public class ElementarySchoolsController {
     //admin/index
     @GetMapping("/admin/elementary-schools/")
     public String index(ElementarySchoolsRepo elementarySchoolsRepo, Model model) {
-        model.addAttribute("elementarySchools", elementarySchoolsRepo.findAll());
+        model.addAttribute("elementarySchools", elementarySchoolsRepo);
         return "admin/ElementarySchools/index";
     }
 

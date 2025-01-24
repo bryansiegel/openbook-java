@@ -5,10 +5,17 @@
 <!--<div th:insert="~{admin/fragments/sidebar}"></div>-->
 <body id="page-top">
 <!-- Page Wrapper -->
-<div class="container">
-
-
-    <div class="row justify-content-center align-items-center">
+<style>
+    .header{
+        background-color: #0047ab;
+        color: white;
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+<div class="">
+    <div class="header">CCSD Open Book</div>
+    <div class="row justify-content-center align-items-center mt-5">
         <div class="col-md-6 my-auto">
             <h1>Login</h1>
             <form th:action="@{/login}" method="post">
