@@ -19,36 +19,42 @@ public class ElementarySchoolsController {
         this.elementarySchoolsRepo = elementarySchoolsRepo;
     }
 
+    //admin/index
     @GetMapping("/admin/elementary-schools/")
     public String index(ElementarySchoolsRepo elementarySchoolsRepo, Model model) {
         model.addAttribute("elementarySchools", elementarySchoolsRepo.findAll());
         return "admin/ElementarySchools/index";
     }
 
+    //admin/create
     @GetMapping("/admin/elementary-schools/create")
     public String create(ElementarySchoolsRepo elementarySchoolsRepo, Model model) {
         model.addAttribute("elementarySchools", elementarySchoolsRepo.save(new ElementarySchools()));
         return "admin/ElementarySchools/create";
     }
 
+    //admin/store
     @PostMapping("/admin/elementary-schools/store")
     public String store(ElementarySchoolsRepo elementarySchoolsRepo, Model model) {
         model.addAttribute("elementarySchools", elementarySchoolsRepo.save(new ElementarySchools()));
         return "admin/ElementarySchools/store";
     }
 
+    //admin/edit
     @GetMapping("/admin/elementary-schools/edit/{id}")
     public String edit(@PathVariable Long id, ElementarySchoolsRepo elementarySchoolsRepo, Model model) {
         model.addAttribute("elementarySchools", elementarySchoolsRepo.findById(id));
         return "admin/ElementarySchools/edit/{id}";
     }
 
+    //admin/show
     @GetMapping("/admin/elementary-schools/show/{id}")
     public String show(@PathVariable Long id, ElementarySchoolsRepo elementarySchoolsRepo, Model model) {
         Model elementarySchools = model.addAttribute("elementarySchools", elementarySchoolsRepo.findById(id));
         return "admin/ElementarySchools/show/{id}";
     }
 
+    //admin/delete
     @GetMapping("/admin/elementary-schools/delete/{id}")
     public String delete(@PathVariable Long id, ElementarySchoolsRepo elementarySchoolsRepo, Model model) {
         Model elementarySchools = model.addAttribute("elementarySchools", elementarySchoolsRepo.findById(id));
