@@ -19,14 +19,14 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/admin/dashboard").authenticated()
+                        .requestMatchers("/admin/dashboard/", "admin/elementary-schools/*").authenticated()
                         .anyRequest().permitAll()
                 )
                 .formLogin((form) -> form
                         .loginPage("/login")
                         .failureUrl("/login-error")
                         .permitAll()
-                        .defaultSuccessUrl("/admin/dashboard")
+                        .defaultSuccessUrl("/admin/dashboard/")
                 )
                 .logout(LogoutConfigurer::permitAll)
                 .build();
