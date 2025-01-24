@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-</body>
-</html>
+<head th:insert="~{admin/fragments/head}"></head>
+<div th:insert="~{admin/fragments/header}"></div>
+
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Elementary Schools</h1>
+</div>
+<div class="row">
+    <table class="table table-striped">
+        <tr>
+            <td>Id</td>
+            <td>School Name</td>
+            <td>Year</td>
+        </tr>
+
+        <tr th:each="elementaryschools : ${elementarySchool}">
+            <td th:text="${elementarySchool.id}"></td>
+            <td th:text="${elementarySchool.schoolName}"></td>
+            <td th:text="${elementarySchool.year}"></td>
+        </tr>
+    </table>
+</div>
+
+<footer th:insert="~{admin/fragments/footer}"></footer>
