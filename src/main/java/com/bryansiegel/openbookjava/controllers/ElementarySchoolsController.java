@@ -29,12 +29,12 @@ public class ElementarySchoolsController {
     //admin/create
     @GetMapping("/admin/elementary-schools/create")
     public String create(ElementarySchoolsRepo elementarySchoolsRepo, Model model) {
-        model.addAttribute("elementarySchools", elementarySchoolsRepo.save(new ElementarySchools()));
+        model.addAttribute("elementarySchools", elementarySchoolsRepo);
         return "admin/ElementarySchools/create";
     }
 
     //admin/store
-    @PostMapping("/admin/elementary-schools/store")
+    @PostMapping("/admin/elementary-schools/create")
     public String store(ElementarySchoolsRepo elementarySchoolsRepo, Model model) {
         model.addAttribute("elementarySchools", elementarySchoolsRepo.save(new ElementarySchools()));
         return "admin/ElementarySchools/store";

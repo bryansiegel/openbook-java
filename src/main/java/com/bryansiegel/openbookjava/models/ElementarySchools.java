@@ -35,7 +35,7 @@ public class ElementarySchools {
     private int benefitsLicensedAppropriation;
     private int benefitsLicensedActual;
     private int salariesSupportAppropriation;
-    private int salariesSupportAcctual;
+    private int salariesSupportActual;
     private int benefitsSupportAppropriation;
     private int benefitsSupportActual;
     private int salariesAdministrationAppropriation;
@@ -48,7 +48,7 @@ public class ElementarySchools {
     private int expenseTypeAppropriation;
     private int expenseTypeActual;
 
-    public ElementarySchools(Long id, String schoolName, int year, int appropriation, int actual, int licensedSalariesAndBenefitsAppropriation, int licensedSalariesAndBenefitsActual, int supportSalariesAndBenefitsAppropriation, int supportSalariesAndBenefitsActual, int administrationSalariesAndBenefitsAppropriation, int administrationSalariesAndBenefitsActual, int servicesAppropiation, int servicesActual, int suppliesAppropriation, int suppliesActual, int equipmentAppropriation, int equipmentActual, int otherAppropriation, int otherActual, int salariesLicensedAppropriation, int salariesLicensedActual, int benefitsLicensedAppropriation, int benefitsLicensedActual, int salariesSupportAppropriation, int salariesSupportAcctual, int benefitsSupportAppropriation, int benefitsSupportActual, int salariesAdministrationAppropriation, int salariesAdministrationActual, int benefitsAdministrationAppropriation, int benefitsAdministrationActual, String expenseType, int glAccount, String glAccountDescription, int expenseTypeAppropriation, int expenseTypeActual) {
+    public ElementarySchools(Long id, String schoolName, int year, int appropriation, int actual, int licensedSalariesAndBenefitsAppropriation, int licensedSalariesAndBenefitsActual, int supportSalariesAndBenefitsAppropriation, int supportSalariesAndBenefitsActual, int administrationSalariesAndBenefitsAppropriation, int administrationSalariesAndBenefitsActual, int servicesAppropiation, int servicesActual, int suppliesAppropriation, int suppliesActual, int equipmentAppropriation, int equipmentActual, int otherAppropriation, int otherActual, int salariesLicensedAppropriation, int salariesLicensedActual, int benefitsLicensedAppropriation, int benefitsLicensedActual, int salariesSupportAppropriation, int salariesSupportActual, int benefitsSupportAppropriation, int benefitsSupportActual, int salariesAdministrationAppropriation, int salariesAdministrationActual, int benefitsAdministrationAppropriation, int benefitsAdministrationActual, String expenseType, int glAccount, String glAccountDescription, int expenseTypeAppropriation, int expenseTypeActual) {
         this.id = id;
         this.schoolName = schoolName;
         this.year = year;
@@ -73,7 +73,7 @@ public class ElementarySchools {
         this.benefitsLicensedAppropriation = benefitsLicensedAppropriation;
         this.benefitsLicensedActual = benefitsLicensedActual;
         this.salariesSupportAppropriation = salariesSupportAppropriation;
-        this.salariesSupportAcctual = salariesSupportAcctual;
+        this.salariesSupportActual = salariesSupportActual;
         this.benefitsSupportAppropriation = benefitsSupportAppropriation;
         this.benefitsSupportActual = benefitsSupportActual;
         this.salariesAdministrationAppropriation = salariesAdministrationAppropriation;
@@ -283,12 +283,12 @@ public class ElementarySchools {
         this.salariesSupportAppropriation = salariesSupportAppropriation;
     }
 
-    public int getSalariesSupportAcctual() {
-        return salariesSupportAcctual;
+    public int getSalariesSupportActual() {
+        return salariesSupportActual;
     }
 
-    public void setSalariesSupportAcctual(int salariesSupportAcctual) {
-        this.salariesSupportAcctual = salariesSupportAcctual;
+    public void setSalariesSupportActual(int salariesSupportAcctual) {
+        this.salariesSupportActual = salariesSupportAcctual;
     }
 
     public int getBenefitsSupportAppropriation() {
@@ -406,7 +406,7 @@ public class ElementarySchools {
                 ", benefitsLicensedAppropriation=" + benefitsLicensedAppropriation +
                 ", benefitsLicensedActual=" + benefitsLicensedActual +
                 ", salariesSupportAppropriation=" + salariesSupportAppropriation +
-                ", salariesSupportAcctual=" + salariesSupportAcctual +
+                ", salariesSupportAcctual=" + salariesSupportActual +
                 ", benefitsSupportAppropriation=" + benefitsSupportAppropriation +
                 ", benefitsSupportActual=" + benefitsSupportActual +
                 ", salariesAdministrationAppropriation=" + salariesAdministrationAppropriation +
