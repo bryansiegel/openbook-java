@@ -21,7 +21,7 @@
             <td>Year</td>
         </tr>
 
-        <tr th:each="elementaryschools : ${elementarySchool}">
+        <tr th:each=" elementarySchool : ${elementarySchools}">
             <td th:text="${elementarySchool.id}"></td>
             <td th:text="${elementarySchool.schoolName}"></td>
             <td th:text="${elementarySchool.year}"></td>

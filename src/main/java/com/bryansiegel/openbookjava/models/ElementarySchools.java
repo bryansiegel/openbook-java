@@ -30,7 +30,7 @@ public class ElementarySchools {
     private int benefitsAdministrationActual;
 
 
-    public ElementarySchools(Long id, String schoolName, int year, int appropriation, int actual, int licensedSalariesAndBenefitsAppropriation, int licensedSalariesAndBenefitsActual, int supportSalariesAndBenefitsAppropriation, int supportSalariesAndBenefitsActual, int administrationSalariesAndBenefitsAppropriation, int administrationSalariesAndBenefitsActual, int servicesAppropiation, int servicesActual, int suppliesAppropriation, int suppliesActual, int equipmentAppropriation, int equipmentActual, int otherAppropriation, int otherActual, int salariesLicensedAppropriation, int salariesLicensedActual, int benefitsLicensedAppropriation, int benefitsLicensedActual, int salariesSupportAppropriation, int salariesSupportActual, int benefitsSupportAppropriation, int benefitsSupportActual, int salariesAdministrationAppropriation, int salariesAdministrationActual, int benefitsAdministrationAppropriation, int benefitsAdministrationActual, String expenseType, int glAccount, String glAccountDescription, int expenseTypeAppropriation, int expenseTypeActual) {
+    public ElementarySchools(Long id, String schoolName, int year, int appropriation, int actual, int salariesLicensedAppropriation, int salariesLicensedActual, int benefitsLicensedAppropriation, int benefitsLicensedActual, int salariesSupportAppropriation, int salariesSupportActual, int benefitsSupportAppropriation, int benefitsSupportActual, int salariesAdministrationAppropriation, int salariesAdministrationActual, int benefitsAdministrationAppropriation, int benefitsAdministrationActual) {
         this.id = id;
         this.schoolName = schoolName;
         this.year = year;
@@ -138,8 +138,8 @@ public class ElementarySchools {
         return salariesSupportActual;
     }
 
-    public void setSalariesSupportActual(int salariesSupportAcctual) {
-        this.salariesSupportActual = salariesSupportAcctual;
+    public void setSalariesSupportActual(int salariesSupportActual) {
+        this.salariesSupportActual = salariesSupportActual;
     }
 
     public int getBenefitsSupportAppropriation() {
@@ -190,8 +190,6 @@ public class ElementarySchools {
         this.benefitsAdministrationActual = benefitsAdministrationActual;
     }
 
-
-
     @Override
     public String toString() {
         return "ElementarySchools{" +
@@ -205,7 +203,7 @@ public class ElementarySchools {
                 ", benefitsLicensedAppropriation=" + benefitsLicensedAppropriation +
                 ", benefitsLicensedActual=" + benefitsLicensedActual +
                 ", salariesSupportAppropriation=" + salariesSupportAppropriation +
-                ", salariesSupportAcctual=" + salariesSupportActual +
+                ", salariesSupportActual=" + salariesSupportActual +
                 ", benefitsSupportAppropriation=" + benefitsSupportAppropriation +
                 ", benefitsSupportActual=" + benefitsSupportActual +
                 ", salariesAdministrationAppropriation=" + salariesAdministrationAppropriation +

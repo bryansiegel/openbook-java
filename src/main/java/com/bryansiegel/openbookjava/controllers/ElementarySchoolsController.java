@@ -21,8 +21,8 @@ public class ElementarySchoolsController {
 
     //admin/index
     @GetMapping("/admin/elementary-schools/")
-    public String index(ElementarySchoolsRepo elementarySchoolsRepo, Model model) {
-        model.addAttribute("elementarySchools", elementarySchoolsRepo);
+    public String index( Model model) {
+        model.addAttribute("elementarySchools", elementarySchoolsRepo.findAll());
         return "admin/ElementarySchools/index";
     }
 
@@ -35,9 +35,9 @@ public class ElementarySchoolsController {
 
     //admin/store
     @PostMapping("/admin/elementary-schools/create")
-    public String store(ElementarySchoolsRepo elementarySchoolsRepo, Model model) {
-        model.addAttribute("elementarySchools", elementarySchoolsRepo.save(new ElementarySchools()));
-        return "admin/ElementarySchools/store";
+    public String saveElementarySchool(ElementarySchools elementarySchools) {
+        elementarySchoolsRepo.save(elementarySchools);
+        return "redirect:/admin/elementary-schools/";
     }
 
     //admin/edit
