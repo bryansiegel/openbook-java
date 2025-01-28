@@ -26,7 +26,11 @@
             <td th:text="${elementarySchool.id}"></td>
             <td th:text="${elementarySchool.schoolName}"></td>
             <td th:text="${elementarySchool.year}"></td>
-            <td><a th:href="@{'/admin/elementary-schools/show/' + ${elementarySchool.id}}" class="btn btn-info">View</a></td>
+            <td>
+                <a th:href="@{'/admin/elementary-schools/show/' + ${elementarySchool.id}}" class="btn btn-info">View</a>
+                <a th:href="@{'/admin/elementary-schools/edit/' + ${elementarySchool.id}}" class="btn btn-warning">Edit</a>
+                <a th:href="@{'/admin/elementary-schools/delete/' + ${elementarySchool.id}}" class="btn btn-danger">Delete</a>
+            </td>
         </tr>
     </table>
 </div>

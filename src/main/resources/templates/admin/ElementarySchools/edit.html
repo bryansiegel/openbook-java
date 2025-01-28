@@ -1,10 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 
-</body>
-</html>
+<head th:insert="~{admin/fragments/head}"></head>
+<div th:insert="~{admin/fragments/header}"></div>
+
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Edit</h1>
+</div>
+
+<div class="row">
+    <form th:action="@{/admin/elementary-schools/create}" th:object="${elementarySchools}" method="post">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+        <div class="form-group pt-4">
+            <label class="form-label">School Name</label>
+            <input type="text" class="form-control" name="schoolName" placeholder="School Name" th:value="${elementarySchools.schoolName}" />
+        </div>
+        <div class="form-group pt-4">
+            <label class="form-label">Year</label>
+            <input type="text" class="form-control" name="year" placeholder="Year" th:value="${elementarySchools.year}" />
+        </div>
+        <hr class="mb-4">
+        <h3>Licensed</h3>
+        <div class="row">
+            <div class="col">
+                <div class="form-group pt-4">
+                    <label for="salariesLicensedAppropriation" class="form-label">Salaries Licensed Appropriation</label><br>
+                    <input type="text" class="form-control" name="salariesLicensedAppropriation" id="salariesLicensedAppropriation" placeholder="Salaries Licensed Appropriation" th:value="${elementarySchools.salariesLicensedAppropriation}" />
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group pt-4">
+                    <label for="salariesLicensedActual" class="form-label">Salaries Licensed Actual</label><br>
+                    <input type="text" class="form-control" name="salariesLicensedActual" id="salariesLicensedActual" placeholder="Salaries Licensed Actual" th:value="${elementarySchools.salariesLicensedActual}" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-group pt-4">
+                    <label for="benefitsLicensedAppropriation" class="form-label">Benefits Licensed Appropriation</label><br>
+                    <input type="text" class="form-control" name="benefitsLicensedAppropriation" id="benefitsLicensedAppropriation" placeholder="Benefits Licensed Appropriation" th:value="${elementarySchools.benefitsLicensedAppropriation}" />
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group pt-4">
+                    <label for="benefitsLicensedActual" class="form-label">Benefits Licensed Actual</label><br>
+                    <input type="text" class="form-control" name="benefitsLicensedActual" id="benefitsLicensedActual" placeholder="Benefits Licensed Actual" th:value="${elementarySchools.benefitsLicensedActual}" />
+                </div>
+            </div>
+        </div>
+        <hr class="mb-4" />
+        <h3>Support</h3>
+        <div class="row">
+            <div class="col">
+                <div class="form-group pt-4">
+                    <label for="salariesSupportAppropriation" class="form-label">Salaries Support Appropriation</label><br>
+                    <input type="text" class="form-control" name="salariesSupportAppropriation" id="salariesSupportAppropriation" placeholder="Salaries Support Appropriation" th:value="${elementarySchools.salariesSupportAppropriation}" />
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group pt-4">
+                    <label for="salariesSupportActual" class="form-label">Salary Support Actual</label><br>
+                    <input type="text" class="form-control" name="salariesSupportActual" id="salariesSupportActual" placeholder="Salary Support Actual" th:value="${elementarySchools.salariesSupportActual}" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-group pt-4">
+                    <label for="benefitsSupportAppropriation" class="form-label">Benefits Support Appropriation</label><br>
+                    <input type="text" class="form-control" name="benefitsSupportAppropriation" id="benefitsSupportAppropriation" placeholder="Benefits Support Appropriation" th:value="${elementarySchools.benefitsSupportAppropriation}" />
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group pt-4">
+                    <label for="benefitsSupportActual" class="form-label">Benefits Support Actual</label><br>
+                    <input type="text" class="form-control" name="benefitsSupportActual" id="benefitsSupportActual" placeholder="Benefits Support Actual" th:value="${elementarySchools.benefitsSupportActual}" />
+                </div>
+            </div>
+        </div>
+        <hr class="mb-4" />
+        <h3>Administration</h3>
+        <div class="row">
+            <div class="col">
+                <div class="form-group pt-4">
+                    <label for="salariesAdministrationAppropriation" class="form-label">Salaries Administration Appropriation</label><br>
+                    <input type="text" class="form-control" name="salariesAdministrationAppropriation" id="salariesAdministrationAppropriation" placeholder="Salaries Administration Appropriation" th:value="${elementarySchools.salariesAdministrationAppropriation}" />
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group pt-4">
+                    <label for="salariesAdministrationActual" class="form-label">Salaries Administration Actual</label><br>
+                    <input type="text" class="form-control" name="salariesAdministrationActual" id="salariesAdministrationActual" placeholder="Salaries Administration Actual" th:value="${elementarySchools.salariesAdministrationActual}" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-group pt-4">
+                    <label for="benefitsAdministrationAppropriation" class="form-label">Benefits Administration Appropriation</label><br>
+                    <input type="text" class="form-control" name="benefitsAdministrationAppropriation" id="benefitsAdministrationAppropriation" placeholder="Benefits Administration Appropriation" th:value="${elementarySchools.benefitsAdministrationAppropriation}" />
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group pt-4">
+                    <label for="benefitsAdministrationActual" class="form-label">Benefits Administration Actual</label><br>
+                    <input type="text" class="form-control" name="benefitsAdministrationActual" id="benefitsAdministrationActual" placeholder="Benefits Administration Actual" th:value="${elementarySchools.benefitsAdministrationActual}" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group pt-4">
+            <input type="submit" value="Update" class="btn btn-primary"/>
+        </div>
+    </form>
+
+</div>
+
+<footer th:insert="~{admin/fragments/footer}"></footer>

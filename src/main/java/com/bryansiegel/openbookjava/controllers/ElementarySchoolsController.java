@@ -42,9 +42,10 @@ public class ElementarySchoolsController {
 
     //admin/edit
     @GetMapping("/admin/elementary-schools/edit/{id}")
-    public String edit(@PathVariable Long id, ElementarySchoolsRepo elementarySchoolsRepo, Model model) {
-        model.addAttribute("elementarySchools", elementarySchoolsRepo.findById(id));
-        return "admin/ElementarySchools/edit/{id}";
+    public String edit(@PathVariable Long id, Model model) {
+        ElementarySchools elementarySchools = elementarySchoolsRepo.findById(id).orElse(null);
+        model.addAttribute("elementarySchools", elementarySchools);
+        return "admin/ElementarySchools/edit";
     }
 
     //admin/show
@@ -52,7 +53,6 @@ public class ElementarySchoolsController {
     public String show(@PathVariable Long id, Model model) {
         ElementarySchools elementarySchools = elementarySchoolsRepo.findById(id).orElse(null);
         model.addAttribute("elementarySchools", elementarySchools);
-
 
         return "/admin/ElementarySchools/show";
     }
