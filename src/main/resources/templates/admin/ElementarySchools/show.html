@@ -6,20 +6,12 @@
 
 
 <div class="row">
+    <h1 th:text="${elementarySchools.schoolName}"></h1>
+    <hr>
+    <p><strong>Id: </strong> <span th:text="${elementarySchools.id}"></span></p>
+    <p><strong>School Name: </strong> <span th:text="${elementarySchools.schoolName}"></span></p>
+    <p><strong>Year: </strong> <span th:text="${elementarySchools.year}"></span></p>
 
-    <table class="table table-striped">
-        <tr>
-            <td>Id</td>
-            <td>School Name</td>
-            <td>Year</td>
-        </tr>
-
-        <tr>
-            <td th:text="${elementarySchools.id}"></td>
-            <td th:text="${elementarySchools.schoolName}"></td>
-            <td th:text="${elementarySchools.year}"></td>
-        </tr>
-    </table>
 </div>
 
 <footer th:insert="~{admin/fragments/footer}"></footer>
