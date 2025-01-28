@@ -33,7 +33,7 @@ public class ElementarySchoolsController {
         return "admin/ElementarySchools/create";
     }
 
-    //admin/store
+    //admin/create
     @PostMapping("/admin/elementary-schools/create")
     public String saveElementarySchool(ElementarySchools elementarySchools) {
         elementarySchoolsRepo.save(elementarySchools);
@@ -49,9 +49,12 @@ public class ElementarySchoolsController {
 
     //admin/show
     @GetMapping("/admin/elementary-schools/show/{id}")
-    public String show(@PathVariable Long id, ElementarySchoolsRepo elementarySchoolsRepo, Model model) {
-        Model elementarySchools = model.addAttribute("elementarySchools", elementarySchoolsRepo.findById(id));
-        return "admin/ElementarySchools/show/{id}";
+    public String show(@PathVariable Long id, Model model) {
+        ElementarySchools elementarySchools = elementarySchoolsRepo.findById(id).orElse(null);
+        model.addAttribute("elementarySchools", elementarySchools);
+
+
+        return "/admin/ElementarySchools/show";
     }
 
     //admin/delete

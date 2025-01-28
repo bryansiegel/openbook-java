@@ -19,12 +19,14 @@
             <td>Id</td>
             <td>School Name</td>
             <td>Year</td>
+            <td></td>
         </tr>
 
-        <tr th:each=" elementarySchool : ${elementarySchools}">
+        <tr th:each="elementarySchool : ${elementarySchools}">
             <td th:text="${elementarySchool.id}"></td>
             <td th:text="${elementarySchool.schoolName}"></td>
             <td th:text="${elementarySchool.year}"></td>
+            <td><a th:href="@{'/admin/elementary-schools/show/' + ${elementarySchool.id}}" class="btn btn-info">View</a></td>
         </tr>
     </table>
 </div>
