@@ -59,9 +59,9 @@ public class ElementarySchoolsController {
 
     //admin/delete
     @GetMapping("/admin/elementary-schools/delete/{id}")
-    public String delete(@PathVariable Long id, ElementarySchoolsRepo elementarySchoolsRepo, Model model) {
-        Model elementarySchools = model.addAttribute("elementarySchools", elementarySchoolsRepo.findById(id));
-        return "admin/ElementarySchools/delete/{id}";
+    public String delete(@PathVariable Long id) {
+        elementarySchoolsRepo.deleteById(id);
+        return "redirect:/admin/elementary-schools/";
     }
 
     //public index
