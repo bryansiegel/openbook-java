@@ -71,7 +71,8 @@ public class ElementarySchoolsController {
 
     //admin/delete
     @GetMapping("/admin/elementary-schools/delete/{id}")
-    public String delete(@PathVariable Long id) {
+    public String delete(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+        redirectAttributes.addFlashAttribute("message", "Elementary School Deleted successfully!");
         elementarySchoolsRepo.deleteById(id);
         return "redirect:/admin/elementary-schools/";
     }
