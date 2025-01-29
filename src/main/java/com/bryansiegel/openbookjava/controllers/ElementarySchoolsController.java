@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class ElementarySchoolsController {
@@ -42,8 +43,10 @@ public class ElementarySchoolsController {
 
     //admin/store
     @PostMapping("/admin/elementary-schools/store")
-    public String saveElementarySchool(ElementarySchools elementarySchools) {
+    public String saveElementarySchool(ElementarySchools elementarySchools, RedirectAttributes redirectAttributes, Authentication authentication) {
+        redirectAttributes.addFlashAttribute("message", "Elementary School submitted successfully!");
         elementarySchoolsRepo.save(elementarySchools);
+
         return "redirect:/admin/elementary-schools/";
     }
 

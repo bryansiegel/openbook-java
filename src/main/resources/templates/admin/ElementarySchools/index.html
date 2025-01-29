@@ -1,8 +1,11 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:insert="~{admin/fragments/head}"></head>
+<head th:insert="~{admin/fragments/head}">
+    <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+</head>
 <div th:insert="~{admin/fragments/header}"></div>
+<div th:insert="~{admin/fragments/flash-message}"></div>
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
