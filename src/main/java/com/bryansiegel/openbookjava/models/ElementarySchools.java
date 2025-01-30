@@ -5,6 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.math.BigDecimal;
+
 @Entity
 public class ElementarySchools {
 
@@ -14,23 +16,23 @@ public class ElementarySchools {
 
     private String schoolName;
     private int year;
-    private int appropriation;
-    private int actual;
-    private int salariesLicensedAppropriation;
-    private int salariesLicensedActual;
-    private int benefitsLicensedAppropriation;
-    private int benefitsLicensedActual;
-    private int salariesSupportAppropriation;
-    private int salariesSupportActual;
-    private int benefitsSupportAppropriation;
-    private int benefitsSupportActual;
-    private int salariesAdministrationAppropriation;
-    private int salariesAdministrationActual;
-    private int benefitsAdministrationAppropriation;
-    private int benefitsAdministrationActual;
+    private BigDecimal appropriation;
+    private BigDecimal actual;
+    private BigDecimal salariesLicensedAppropriation;
+    private BigDecimal salariesLicensedActual;
+    private BigDecimal benefitsLicensedAppropriation;
+    private BigDecimal benefitsLicensedActual;
+    private BigDecimal salariesSupportAppropriation;
+    private BigDecimal salariesSupportActual;
+    private BigDecimal benefitsSupportAppropriation;
+    private BigDecimal benefitsSupportActual;
+    private BigDecimal salariesAdministrationAppropriation;
+    private BigDecimal salariesAdministrationActual;
+    private BigDecimal benefitsAdministrationAppropriation;
+    private BigDecimal benefitsAdministrationActual;
 
 
-    public ElementarySchools(Long id, String schoolName, int year, int appropriation, int actual, int salariesLicensedAppropriation, int salariesLicensedActual, int benefitsLicensedAppropriation, int benefitsLicensedActual, int salariesSupportAppropriation, int salariesSupportActual, int benefitsSupportAppropriation, int benefitsSupportActual, int salariesAdministrationAppropriation, int salariesAdministrationActual, int benefitsAdministrationAppropriation, int benefitsAdministrationActual) {
+    public ElementarySchools(Long id, String schoolName, int year, BigDecimal appropriation, BigDecimal actual, BigDecimal salariesLicensedAppropriation, BigDecimal salariesLicensedActual, BigDecimal benefitsLicensedAppropriation, BigDecimal benefitsLicensedActual, BigDecimal salariesSupportAppropriation, BigDecimal salariesSupportActual, BigDecimal benefitsSupportAppropriation, BigDecimal benefitsSupportActual, BigDecimal salariesAdministrationAppropriation, BigDecimal salariesAdministrationActual, BigDecimal benefitsAdministrationAppropriation, BigDecimal benefitsAdministrationActual) {
         this.id = id;
         this.schoolName = schoolName;
         this.year = year;
@@ -78,115 +80,115 @@ public class ElementarySchools {
         this.year = year;
     }
 
-    public int getAppropriation() {
+    public BigDecimal getAppropriation() {
         return appropriation;
     }
 
-    public void setAppropriation(int appropriation) {
+    public void setAppropriation(BigDecimal appropriation) {
         this.appropriation = appropriation;
     }
 
-    public int getActual() {
+    public BigDecimal getActual() {
         return actual;
     }
 
-    public void setActual(int actual) {
+    public void setActual(BigDecimal actual) {
         this.actual = actual;
     }
 
-    public int getSalariesLicensedAppropriation() {
+    public BigDecimal getSalariesLicensedAppropriation() {
         return salariesLicensedAppropriation;
     }
 
-    public void setSalariesLicensedAppropriation(int salariesLicensedAppropriation) {
+    public void setSalariesLicensedAppropriation(BigDecimal salariesLicensedAppropriation) {
         this.salariesLicensedAppropriation = salariesLicensedAppropriation;
     }
 
-    public int getSalariesLicensedActual() {
+    public BigDecimal getSalariesLicensedActual() {
         return salariesLicensedActual;
     }
 
-    public void setSalariesLicensedActual(int salariesLicensedActual) {
+    public void setSalariesLicensedActual(BigDecimal salariesLicensedActual) {
         this.salariesLicensedActual = salariesLicensedActual;
     }
 
-    public int getBenefitsLicensedAppropriation() {
+    public BigDecimal getBenefitsLicensedAppropriation() {
         return benefitsLicensedAppropriation;
     }
 
-    public void setBenefitsLicensedAppropriation(int benefitsLicensedAppropriation) {
+    public void setBenefitsLicensedAppropriation(BigDecimal benefitsLicensedAppropriation) {
         this.benefitsLicensedAppropriation = benefitsLicensedAppropriation;
     }
 
-    public int getBenefitsLicensedActual() {
+    public BigDecimal getBenefitsLicensedActual() {
         return benefitsLicensedActual;
     }
 
-    public void setBenefitsLicensedActual(int benefitsLicensedActual) {
+    public void setBenefitsLicensedActual(BigDecimal benefitsLicensedActual) {
         this.benefitsLicensedActual = benefitsLicensedActual;
     }
 
-    public int getSalariesSupportAppropriation() {
+    public BigDecimal getSalariesSupportAppropriation() {
         return salariesSupportAppropriation;
     }
 
-    public void setSalariesSupportAppropriation(int salariesSupportAppropriation) {
+    public void setSalariesSupportAppropriation(BigDecimal salariesSupportAppropriation) {
         this.salariesSupportAppropriation = salariesSupportAppropriation;
     }
 
-    public int getSalariesSupportActual() {
+    public BigDecimal getSalariesSupportActual() {
         return salariesSupportActual;
     }
 
-    public void setSalariesSupportActual(int salariesSupportActual) {
+    public void setSalariesSupportActual(BigDecimal salariesSupportActual) {
         this.salariesSupportActual = salariesSupportActual;
     }
 
-    public int getBenefitsSupportAppropriation() {
+    public BigDecimal getBenefitsSupportAppropriation() {
         return benefitsSupportAppropriation;
     }
 
-    public void setBenefitsSupportAppropriation(int benefitsSupportAppropriation) {
+    public void setBenefitsSupportAppropriation(BigDecimal benefitsSupportAppropriation) {
         this.benefitsSupportAppropriation = benefitsSupportAppropriation;
     }
 
-    public int getBenefitsSupportActual() {
+    public BigDecimal getBenefitsSupportActual() {
         return benefitsSupportActual;
     }
 
-    public void setBenefitsSupportActual(int benefitsSupportActual) {
+    public void setBenefitsSupportActual(BigDecimal benefitsSupportActual) {
         this.benefitsSupportActual = benefitsSupportActual;
     }
 
-    public int getSalariesAdministrationAppropriation() {
+    public BigDecimal getSalariesAdministrationAppropriation() {
         return salariesAdministrationAppropriation;
     }
 
-    public void setSalariesAdministrationAppropriation(int salariesAdministrationAppropriation) {
+    public void setSalariesAdministrationAppropriation(BigDecimal salariesAdministrationAppropriation) {
         this.salariesAdministrationAppropriation = salariesAdministrationAppropriation;
     }
 
-    public int getSalariesAdministrationActual() {
+    public BigDecimal getSalariesAdministrationActual() {
         return salariesAdministrationActual;
     }
 
-    public void setSalariesAdministrationActual(int salariesAdministrationActual) {
+    public void setSalariesAdministrationActual(BigDecimal salariesAdministrationActual) {
         this.salariesAdministrationActual = salariesAdministrationActual;
     }
 
-    public int getBenefitsAdministrationAppropriation() {
+    public BigDecimal getBenefitsAdministrationAppropriation() {
         return benefitsAdministrationAppropriation;
     }
 
-    public void setBenefitsAdministrationAppropriation(int benefitsAdministrationAppropriation) {
+    public void setBenefitsAdministrationAppropriation(BigDecimal benefitsAdministrationAppropriation) {
         this.benefitsAdministrationAppropriation = benefitsAdministrationAppropriation;
     }
 
-    public int getBenefitsAdministrationActual() {
+    public BigDecimal getBenefitsAdministrationActual() {
         return benefitsAdministrationActual;
     }
 
-    public void setBenefitsAdministrationActual(int benefitsAdministrationActual) {
+    public void setBenefitsAdministrationActual(BigDecimal benefitsAdministrationActual) {
         this.benefitsAdministrationActual = benefitsAdministrationActual;
     }
 
