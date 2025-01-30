@@ -30,6 +30,7 @@ public class ElementarySchoolsController {
     public String index(Authentication authentication, Model model) {
         model.addAttribute("elementarySchools", elementarySchoolsRepo.findAll());
         model.addAttribute("user", authentication.getName());
+
         return "admin/ElementarySchools/index";
     }
 
@@ -38,6 +39,7 @@ public class ElementarySchoolsController {
     public String create(ElementarySchoolsRepo elementarySchoolsRepo, Authentication authentication,Model model) {
         model.addAttribute("elementarySchools", elementarySchoolsRepo);
         model.addAttribute("user", authentication.getName());
+
         return "admin/ElementarySchools/create";
     }
 
@@ -56,6 +58,7 @@ public class ElementarySchoolsController {
         ElementarySchools elementarySchools = elementarySchoolsRepo.findById(id).orElse(null);
         model.addAttribute("elementarySchools", elementarySchools);
         model.addAttribute("user", authentication.getName());
+
         return "admin/ElementarySchools/edit";
     }
 
@@ -74,12 +77,14 @@ public class ElementarySchoolsController {
     public String delete(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         redirectAttributes.addFlashAttribute("message", "Elementary School Deleted successfully!");
         elementarySchoolsRepo.deleteById(id);
+
         return "redirect:/admin/elementary-schools/";
     }
 
     //public index
     @GetMapping("/elementary-schools/")
     public String publicIndex() {
+
         return "public/ElementarySchools/index";
     }
 
