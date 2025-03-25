@@ -3,49 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bar Chart Example</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Chart Examples</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <body>
-<h1>Bar Chart Example</h1>
-<canvas id="myBarChart" width="400" height="400"></canvas>
-<script>
-    async function fetchData() {
-        const response = await fetch('/api/elementary-schools');
-        const data = await response.json();
-        return data;
-    }
 
-    function createBarChart(data) {
-        const ctx = document.getElementById('myBarChart').getContext('2d');
-        const labels = data.map(school => school.schoolName); // Adjust according to your model
+<div class="container-fluid">
 
-        const values = data.map(school => school.year); // Adjust according to your model
+    <div class="row">
+        <div class="col-md-12 p-5">
+            <h1 class="text-center">Openbook Chart Examples</h1>
+        </div>
+    </div>
 
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Elementary Schools Data',
-                    data: values,
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    }
+    <div class="row">
+        <div class="col-md-5 p-5">
+            <h2>Bar Chart Example</h2>
+            <canvas id="myBarChart" width="400" height="400"></canvas>
+        </div>
+        <div class="col-md-4 p-5">
+            <h2>Pie Chart Example</h2>
+            <canvas id="myPieChart" width="400" height="400"></canvas>
+        </div>
+    </div>
 
-    fetchData().then(data => createBarChart(data));
-</script>
-</body>
-</html>
+    <footer th:insert="~{public/fragments/footer}"></footer>
