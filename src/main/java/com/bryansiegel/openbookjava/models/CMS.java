@@ -3,6 +3,7 @@ package com.bryansiegel.openbookjava.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 
 @Entity
 public class CMS {
@@ -12,6 +13,7 @@ public class CMS {
 
     private Long id;
 
+    @Lob
     private String introParagraph;
     private String pageTitle;
     private String metaDescription;

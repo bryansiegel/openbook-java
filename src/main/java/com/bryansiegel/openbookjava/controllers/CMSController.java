@@ -19,7 +19,7 @@ public class CMSController {
 
 @GetMapping("admin/cms/")
     private String index(Model model) {
-        model.addAttribute("cms", cmsRepo.findAll());
+        model.addAttribute("cms", cmsRepo.findAll().get(0));
         return "admin/CMS/index";
     }
 
