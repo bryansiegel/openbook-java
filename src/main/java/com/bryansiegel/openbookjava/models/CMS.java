@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
+import org.hibernate.internal.log.SubSystemLogging;
 
 @Entity
 public class CMS {
@@ -12,6 +13,9 @@ public class CMS {
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
 
     private Long id;
+
+    @Lob
+    private String headerParagraph;
 
     @Lob
     private String introParagraph;
@@ -24,6 +28,14 @@ public class CMS {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getHeaderParagraph() {
+        return headerParagraph;
+    }
+
+    public void setHeaderParagraph(String headerParagraph) {
+        this.headerParagraph = headerParagraph;
     }
 
     public String getIntroParagraph() {
@@ -54,6 +66,7 @@ public class CMS {
     public String toString() {
         return "CMS{" +
                 "id=" + id +
+                ", headerParagraph='" + headerParagraph + '\'' +
                 ", introParagraph='" + introParagraph + '\'' +
                 ", pageTitle='" + pageTitle + '\'' +
                 ", metaDescription='" + metaDescription + '\'' +

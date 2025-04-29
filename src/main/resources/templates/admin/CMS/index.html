@@ -43,16 +43,19 @@
 
 <!-- Hero Section -->
 <!--<section class="bg-primary text-white text-center py-5" style="background-color: #1A2F59 !important; background-image: url('img/header-bg.jpg'); background-size: cover; background-position: center;">-->
-<section class="bg-primary text-white text-center py-5" style="background-color: #0D3A5E !important;">
+<section class="bg-primary py-5" style="background-color: #0D3A5E !important;">
     <div class="container">
-        <h1 class="display-4">What is Openbook?</h1>
+        <h1 class="display-4 text-white text-center">What is Openbook?</h1>
+        <div th:each="cms : ${cms}" style="background-color: #ffffff; padding: 10px; border-radius: 10px;color:black;">
 
-        <p class="lead">Open Book is an interactive online tool that provides the public with clear, accessible insight
+        <p class="lead wysiwyg-editor" th:text="${cms.headerParagraph}" th:value="${cms.headerParagraph}">
+            Open Book is an interactive online tool that provides the public with clear, accessible insight
             into the Clark County School District’s (CCSD) budget and financial information. Designed to promote
             transparency and accountability, Open Book allows users to explore how CCSD allocates and spends funds
             across schools, departments, and programs. With user-friendly charts and detailed breakdowns, the platform
             makes it easy for community members, parents, and stakeholders to stay informed about the district’s
             financial priorities and decisions.</p>
+            </div>
     </div>
 </section>
 <section style="background-color:#eeeeee;">
@@ -622,17 +625,20 @@
 </body>
 </html>
 <footer th:insert="~{admin/fragments/footer}"></footer>
-<!--<script>-->
-<!--    $(document).ready(function () {-->
-<!--        // jQuery('#jobsTable').DataTable();-->
-<!--        $('.wysiwyg-editor').summernote({-->
-<!--            height: 400, // set editor height-->
-<!--            minHeight: null, // set minimum height of editor-->
-<!--            maxHeight: null, // set maximum height of editor-->
-<!--            focus: true // set focus to editable area after initializing summernote-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
+<!-- Include Summernote CSS and JS -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.wysiwyg-editor').summernote({
+            height: 400, // Set editor height
+            minHeight: null, // Minimum height
+            maxHeight: null, // Maximum height
+            focus: true // Focus on editor after initialization
+        });
+    });
+</script>
 <div style="position: fixed; bottom: 0; width: 100%; background-color: #eeeeee; padding: 10px; box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);">
     <div class="container d-flex justify-content-center">
         <button class="btn btn-lg btn-primary me-2">Save</button>
