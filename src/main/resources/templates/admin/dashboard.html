@@ -18,22 +18,25 @@
                 <h6 class="m-0 font-weight-bold text-primary">
                     <a href="/admin/elementary-schools/">Elementary Schools</a>
                 </h6>
-                <div class="dropdown no-arrow">
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                         aria-labelledby="dropdownMenuLink">
-                        <div class="dropdown-header">Dropdown Header:</div>
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </div>
+
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
-                </div>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <td>School Name</td>
+                        <td>Year</td>
+                        <td></td>
+                    </tr>
+                    </thead>
+                    <tbody th:each="elementary :  ${elementarySchools}">
+                    <td th:text="${elementary.schoolName}"></td>
+                    <td th:text="${elementary.year}"></td>
+                    <td>
+                        <a th:href="@{'/admin/elementary-schools/show/' + ${elementary.id}}" class="btn btn-info">View</a>                    </td>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -44,24 +47,95 @@
             <!-- Card Header - Dropdown -->
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">
-                    <a href="/admin/elementary-schools/">Elementary Schools</a>
+                    <a href="/admin/elementary-schools/">Middle Schools</a>
                 </h6>
-                <div class="dropdown no-arrow">
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                         aria-labelledby="dropdownMenuLink">
-                        <div class="dropdown-header">Dropdown Header:</div>
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </div>
+
             </div>
             <!-- Card Body -->
             <div class="card-body">
-                <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
-                </div>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <td>School Name</td>
+                        <td>Year</td>
+                        <td></td>
+                    </tr>
+                    </thead>
+                    <tbody th:each="elementary :  ${elementarySchools}">
+                    <td th:text="${elementary.schoolName}"></td>
+                    <td th:text="${elementary.year}"></td>
+                    <td>
+                        <a th:href="@{'/admin/elementary-schools/show/' + ${elementary.id}}" class="btn btn-info">View</a>
+                    </td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <!-- Area Chart -->
+    <div class="col-xl-6 col-lg-5">
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">
+                    <a href="/admin/elementary-schools/">High Schools</a>
+                </h6>
+
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <td>School Name</td>
+                        <td>Year</td>
+                        <td></td>
+                    </tr>
+                    </thead>
+                    <tbody th:each="elementary :  ${elementarySchools}">
+                    <td th:text="${elementary.schoolName}"></td>
+                    <td th:text="${elementary.year}"></td>
+                    <td>
+                        <a th:href="@{'/admin/elementary-schools/show/' + ${elementary.id}}" class="btn btn-info">View</a>
+                    </td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie Chart -->
+    <div class="col-xl-6 col-lg-5">
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">
+                    <a href="/admin/elementary-schools/">Magnet Schools</a>
+                </h6>
+
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <td>School Name</td>
+                        <td>Year</td>
+                        <td></td>
+                    </tr>
+                    </thead>
+                    <tbody th:each="elementary :  ${elementarySchools}">
+                    <td th:text="${elementary.schoolName}"></td>
+                    <td th:text="${elementary.year}"></td>
+                    <td>
+                        <a th:href="@{'/admin/elementary-schools/show/' + ${elementary.id}}" class="btn btn-info">View</a>
+                    </td>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
