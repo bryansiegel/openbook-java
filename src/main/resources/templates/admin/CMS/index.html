@@ -27,7 +27,7 @@
         </h1>
 
 
-        <div style="background-color: #ffffff; padding: 10px; border-radius: 10px;color:black;">
+        <div class="bg-white">
             <div class="wysiwyg-editor-outline">
                 <textarea rows="10"
                           cols="70"
@@ -113,56 +113,31 @@
             <div class="col p-3">
                 <h3 class="pb-3 grey">Strategic Initiatives</h3>
 
-                <div class="wysiwyg-editor-outline">
-                    <h6 class="initiatives">
+                <div>
+                    <h6 class="initiatives wysiwyg-editor-outline">
                         <input type="text"
                                th:value="${cms.initiativeOne}" th:placeholder="${cms.initiativeOne}"
                                class="form-control"/>
-                        <span class="float-end">
-                            <a href="">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </span>
                     </h6>
-                    <h6 class="initiatives">
+                    <h6 class="initiatives wysiwyg-editor-outline">
                         <input type="text"
                                th:value="${cms.initiativeTwo}"
                                th:placeholder="${cms.initiativeTwo}" class="form-control"/>
-                        <span class="float-end">
-                        <a href="">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </span>
                     </h6>
-                    <h6 class="initiatives">
+                    <h6 class="initiatives wysiwyg-editor-outline">
                         <input type="text"
                                th:value="${cms.initiativeThree}"
                                th:placeholder="${cms.initiativeThree}" class="form-control"/>
-                        <span class="float-end">
-                        <a href="">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </span>
                     </h6>
-                    <h6 class="initiatives">
+                    <h6 class="initiatives wysiwyg-editor-outline">
                         <input type="text"
                                th:value="${cms.initiativeFour}"
                                th:placeholder="${cms.initiativeFour}" class="form-control"/>
-                        <span class="float-end">
-                        <a href="">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </span>
                     </h6>
-                    <h6 class="initiatives">
+                    <h6 class="initiatives wysiwyg-editor-outline">
                         <input type="text"
                                th:value="${cms.initiativeFive}"
                                th:placeholder="${cms.initiativeFive}" class="form-control"/>
-                        <span class="float-end">
-                        <a href="">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </span>
                     </h6>
                 </div>
             </div>
