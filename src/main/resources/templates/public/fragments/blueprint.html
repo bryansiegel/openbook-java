@@ -1,0 +1,58 @@
+<div class="container p-5">
+    <div class="row">
+        <div class="col p-3">
+            <h2 th:text="${cms.bluePrintTitle}"></h2>
+            <div class="divider"></div>
+            <p th:text="${cms.blueprintParagraph}"></p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fourYearBlueprintModal">Read
+                More
+            </button>
+        </div>
+        <div class="col p-3">
+            <h3 class="pb-3 grey">Strategic Initiatives</h3>
+
+            <div>
+                <h6 class="initiatives">
+                    <span  th:text="${cms.initiativeOne}"></span>
+                    <span class="float-end" >
+                            <a href="">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </span>
+                </h6>
+                <h6 class="initiatives">
+                    <span  th:text="${cms.initiativeTwo}"></span>
+                    <span class="float-end">
+                            <a href="">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </span>
+                </h6>
+                <h6 class="initiatives">
+                    <span  th:text="${cms.initiativeThree}"></span>
+                    <span class="float-end">
+                            <a href="">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </span>
+                </h6>
+                <h6 class="initiatives">
+                    <span  th:text="${cms.initiativeFour}"></span>
+                    <span class="float-end">
+                            <a href="">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </span>
+                </h6>
+                <h6 class="initiatives">
+                    <span  th:text="${cms.initiativeFive}"></span>
+                    <span class="float-end">
+                            <a href="">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </span>
+                </h6>
+            </div>
+        </div>
+    </div>
+</div>

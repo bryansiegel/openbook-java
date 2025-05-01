@@ -1,0 +1,17 @@
+<div class="container p-5">
+        <div class="row">
+            <div class="col p-3">
+                <h1 th:text="${cms.introTitle}"></h1>
+                <div class="divider"></div>
+                <p th:text="${cms.introParagraph}"></p>
+                <p class="blue-number" th:text="${cms.introNumber}"></p>
+                <p class="darkgrey-sentence" th:text="${cms.introSentenceUnderNumber}"></p>
+            </div>
+            <div class="col p-3">
+                <!--                    Charts-->
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>

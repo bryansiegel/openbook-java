@@ -1,0 +1,32 @@
+<div class="container" th:each="cms : ${cms}">
+    <div class="row">
+        <!-- Column 1: Pie Chart for Elementary Schools -->
+        <div class="col-md-3">
+            <h3>Elementary Schools</h3>
+            <div class="divider"></div>
+            <p th:text="${cms.elementarySchoolParagraph}"></p>
+            <canvas id="elementaryChart"></canvas>
+        </div>
+        <!-- Column 2: Pie Chart for Middle Schools -->
+        <div class="col-md-3">
+            <h3>Middle Schools</h3>
+            <div class="divider"></div>
+            <p th:text="${cms.middleSchoolParagraph}"></p>
+            <canvas id="middleSchoolChart"></canvas>
+        </div>
+        <!-- Column 3: Pie Chart for High Schools -->
+        <div class="col-md-3">
+            <h3>High Schools</h3>
+            <div class="divider"></div>
+            <p th:text="${cms.highSchoolParagraph}"></p>
+            <canvas id="highSchoolChart"></canvas>
+        </div>
+        <!-- Column 4: Pie Chart for Magnet Schools -->
+        <div class="col-md-3">
+            <h3>Magnet Schools</h3>
+            <div class="divider"></div>
+            <p th:text="${cms.magnetSchoolParagraph}"></p>
+            <canvas id="magnetSchoolChart"></canvas>
+        </div>
+    </div>
+</div>

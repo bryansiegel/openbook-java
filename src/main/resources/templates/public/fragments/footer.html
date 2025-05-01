@@ -1,93 +1,47 @@
-<!--<script src="/js/jquery.min.js"></script>-->
-<script src="/js/bootstrap.min.js"></script>
-<!--<script src="/js/htmx.js"></script>-->
-<script src="https://unpkg.com/htmx.org@2.0.4/dist/htmx.js" integrity="sha384-oeUn82QNXPuVkGCkcrInrS1twIxKhkZiFfr2TdiuObZ3n3yIeMiqcRzkIcguaof1" crossorigin="anonymous"></script>
+<div class="container">
+    <div class="row">
+        <!-- Column 1: Logo and Contact Information -->
+        <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+            <img src="https://fmp.ccsd.net/wp-content/uploads/2025/04/ccsd-logo-np.png" alt="Openbook Logo"
+                 height="100" width="170" class="mb-3">
+            <p>Contact: (702) 799-8492</p>
+            <p><a href="mailto:openbook@nv.ccsd.net" class="text-white">openbook@nv.ccsd.net</a></p>
+            <p>3050 E. Flamingo Rd., Las Vegas, NV 89121</p>
+        </div>
+        <!-- Column 2: Important Links -->
+        <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+            <h5>Important Links</h5>
+            <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Link 1</a></li>
+                <li><a href="#" class="text-white">Link 2</a></li>
+                <li><a href="#" class="text-white">Link 3</a></li>
+                <li><a href="#" class="text-white">Link 4</a></li>
+            </ul>
+        </div>
+        <!-- Column 3: Legal Info -->
+        <div class="col-md-4 text-center text-md-start">
+            <h5>Legal Info</h5>
+            <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Legal Link 1</a></li>
+                <li><a href="#" class="text-white">Legal Link 2</a></li>
+                <li><a href="#" class="text-white">Legal Link 3</a></li>
+                <li><a href="#" class="text-white">Legal Link 4</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
-<!--Charts-->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="js/charts.js"></script>
+<script src="js/datatables.js"></script>
 <script>
-    async function fetchData() {
-        const response = await fetch('/api/elementary-schools');
-        const data = await response.json();
-        return data;
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
     }
-
-    function createBarChart(data) {
-        const ctx = document.getElementById('myBarChart').getContext('2d');
-        const labels = data.map(school => school.schoolName); // Adjust according to your model
-        const values = data.map(school => school.year); // Adjust according to your model
-
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Elementary Schools Data',
-                    data: values,
-                    backgroundColor: '#0E47AB',
-                    borderColor: '#0E47AB',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    }
-
-    function createPieChart(data) {
-        const ctx = document.getElementById('myPieChart').getContext('2d');
-        const labels = data.map(school => school.schoolName); // Adjust according to your model
-        const values = data.map(school => school.year); // Adjust according to your model
-
-        new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Elementary Schools Data',
-                    data: values,
-                    backgroundColor: [
-                        '#0E47AB',
-                        '#FF6384',
-                        '#36A2EB',
-                        '#FFCE56',
-                        '#4BC0C0',
-                        '#9966FF'
-                    ],
-                    borderColor: [
-                        '#0E47AB',
-                        '#FF6384',
-                        '#36A2EB',
-                        '#FFCE56',
-                        '#4BC0C0',
-                        '#9966FF'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    tooltip: {
-                        enabled: true
-                    }
-                }
-            }
-        });
-    }
-
-    fetchData().then(data => {
-        createBarChart(data);
-        createPieChart(data);
-    });
 </script>

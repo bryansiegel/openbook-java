@@ -1,422 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>CCSD Openbook</title>
-    <meta name="description" content="CCSD Openbook provides insights into school budgets, strategic initiatives, and educational data for transparency and community engagement.">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet" />
-
-    <link rel="stylesheet" href="css/styles.css"/>
-</head>
+<head th:insert="~{public/fragments/head}"></head>
 
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top bg-white">
-    <div class="container">
-        <a class="navbar-brand" href="#"><img src="../img/openbook-logo.png" alt="" height="71" width="170"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <div id="google_translate_element"></div>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<nav th:insert="~{public/fragments/nav}" class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top bg-white"></nav>
 
 <!-- Hero Section -->
-<section class="bg-primary text-white text-center py-5 bg-blue"  th:each="cms : ${cms}">
-    <div class="container">
-        <h1 class="display-4" th:text="${cms.headerTitle}"></h1>
-        <p class="lead" th:text="${cms.headerParagraph}"></p>
-    </div>
+<section class="bg-primary text-white text-center py-5 bg-blue"
+         th:each="cms : ${cms}"
+         th:insert="~{public/fragments/header}">
 </section>
 
 <!-- Navigation Section -->
-<section class="bg-grey">
-    <div class="nav-buttons">
-        <a href="#faqs">Numbers</a>
-        <a href="#eventscalendar">Search</a>
-        <a href="#eventsmap">Tools</a>
-        <a href="#surveys">Data</a></div>
-</section>
+<section class="bg-grey" th:insert="~{public/fragments/sub-nav}"></section>
 
 <!-- Main Content -->
-<section>
-    <div class="container p-5" th:each="cms : ${cms}">
-        <div class="row">
-            <div class="col p-3">
-                <h1 th:text="${cms.introTitle}"></h1>
-                <div class="divider"></div>
-                <p th:text="${cms.introParagraph}"></p>
-                <p class="blue-number" th:text="${cms.introNumber}"></p>
-                <p class="darkgrey-sentence" th:text="${cms.introSentenceUnderNumber}"></p>
-            </div>
-            <div class="col p-3">
-                <!--                    Charts-->
-                <div>
-                    <canvas id="myChart"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<hr>
-<section th:each="cms : ${cms}">
-    <div class="container p-5">
-        <div class="row">
-            <div class="col p-3">
-                <h2 th:text="${cms.bluePrintTitle}"></h2>
-                <div class="divider"></div>
-                <p th:text="${cms.blueprintParagraph}"></p>
-                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fourYearBlueprintModal">Read
-                    More
-                </button>
-            </div>
-            <div class="col p-3">
-                <h3 class="pb-3 grey">Strategic Initiatives</h3>
+<section th:each="cms : ${cms}" th:insert="~{public/fragments/intro-section}"></section>
 
-                <div>
-                    <h6 class="initiatives">
-                        <span  th:text="${cms.initiativeOne}"></span>
-                        <span class="float-end" >
-                            <a href="">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </span>
-                    </h6>
-                    <h6 class="initiatives">
-                        <span  th:text="${cms.initiativeTwo}"></span>
-                        <span class="float-end">
-                            <a href="">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </span>
-                    </h6>
-                    <h6 class="initiatives">
-                        <span  th:text="${cms.initiativeThree}"></span>
-                        <span class="float-end">
-                            <a href="">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </span>
-                    </h6>
-                    <h6 class="initiatives">
-                        <span  th:text="${cms.initiativeFour}"></span>
-                        <span class="float-end">
-                            <a href="">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </span>
-                    </h6>
-                    <h6 class="initiatives">
-                        <span  th:text="${cms.initiativeFive}"></span>
-                        <span class="float-end">
-                            <a href="">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </span>
-                    </h6>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<hr>
+
+<section th:each="cms : ${cms}" th:insert="~{public/fragments/blueprint}"></section>
+
 <hr>
 
 <!--Tools-->
-<section class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-4">Tools</h2>
-        <div class="row">
-            <!-- Card 1 -->
-            <div class="col-md-3 mb-4">
-                <div class="card h-100 text-center shadow">
-                    <img src="img/report.png" class="card-img-top" alt="Placeholder">
-                    <div class="card-body">
-                        <h5 class="card-title">Budget Comparison</h5>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#budgetComparisonModal">
-                            Read More
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="col-md-3 mb-4">
-                <div class="card h-100 text-center shadow">
-                    <img src="img/report.png" class="card-img-top" alt="Placeholder">
-                    <div class="card-body">
-                        <h5 class="card-title">Budget Comparison</h5>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#budgetComparisonModal">
-                            Read More
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="col-md-3 mb-4">
-                <div class="card h-100 text-center shadow">
-                    <img src="img/report.png" class="card-img-top" alt="Placeholder">
-                    <div class="card-body">
-                        <h5 class="card-title">Budget Comparison</h5>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#budgetComparisonModal">
-                            Read More
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="col-md-3 mb-4">
-                <div class="card h-100 text-center shadow">
-                    <img src="img/report.png" class="card-img-top" alt="Placeholder">
-                    <div class="card-body">
-                        <h5 class="card-title">Budget Comparison</h5>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#budgetComparisonModal">
-                            Read More
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<section class="py-5" th:insert="~{public/fragments/tools}"></section>
 
 <!-- Search -->
-<section class="bg-light py-5">
-    <div class="container">
-        <h2 class="text-center mb-4">Search for Data</h2>
-        <form class="row g-3 justify-content-center">
-            <div class="col-md-3">
-                <select class="form-select">
-                    <option selected>Grade Level</option>
-                    <option>Elementary (K–5)</option>
-                    <option>Middle School (6–8)</option>
-                    <option>High School (9–12)</option>
-                    <option>Administration</option>
-                    <option>Licensed Professionals</option>
-                    <option>Support</option>
-                </select>
-            </div>
-            <div class="col-md-3">
-                <select class="form-select">
-                    <option selected>Year</option>
-                    <option>2025</option>
-                    <option>2024</option>
-                    <option>2023</option>
-                </select>
-            </div>
-
-            <div class="col-md-2">
-                <button type="submit" class="btn btn-primary w-100">Search</button>
-            </div>
-        </form>
-    </div>
-</section>
+<section class="bg-light py-5" th:insert="~{public/fragments/search}"></section>
 
 <!-- FAQ Section -->
-<section class="py-5">
-    <div class="container" th:each="cms : ${cms}">
-        <div class="row">
-            <!-- Column 1: Pie Chart for Elementary Schools -->
-            <div class="col-md-3">
-                <h3>Elementary Schools</h3>
-                <div class="divider"></div>
-                <p th:text="${cms.elementarySchoolParagraph}"></p>
-                <canvas id="elementaryChart"></canvas>
-            </div>
-            <!-- Column 2: Pie Chart for Middle Schools -->
-            <div class="col-md-3">
-                <h3>Middle Schools</h3>
-                <div class="divider"></div>
-                <p th:text="${cms.middleSchoolParagraph}"></p>
-                <canvas id="middleSchoolChart"></canvas>
-            </div>
-            <!-- Column 3: Pie Chart for High Schools -->
-            <div class="col-md-3">
-                <h3>High Schools</h3>
-                <div class="divider"></div>
-                <p th:text="${cms.highSchoolParagraph}"></p>
-                <canvas id="highSchoolChart"></canvas>
-            </div>
-            <!-- Column 4: Pie Chart for Magnet Schools -->
-            <div class="col-md-3">
-                <h3>Magnet Schools</h3>
-                <div class="divider"></div>
-                <p th:text="${cms.magnetSchoolParagraph}"></p>
-                <canvas id="magnetSchoolChart"></canvas>
-            </div>
-        </div>
-    </div>
-</section>
+<section class="py-5" th:insert="~{public/fragments/faq}"></section>
 
 <!-- Footer -->
-<footer class="bg-dark text-white py-4">
-    <div class="container">
-        <div class="row">
-            <!-- Column 1: Logo and Contact Information -->
-            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
-                <img src="https://fmp.ccsd.net/wp-content/uploads/2025/04/ccsd-logo-np.png" alt="Openbook Logo"
-                     height="100" width="170" class="mb-3">
-                <p>Contact: (702) 799-8492</p>
-                <p><a href="mailto:openbook@nv.ccsd.net" class="text-white">openbook@nv.ccsd.net</a></p>
-                <p>3050 E. Flamingo Rd., Las Vegas, NV 89121</p>
-            </div>
-            <!-- Column 2: Important Links -->
-            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
-                <h5>Important Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#" class="text-white">Link 1</a></li>
-                    <li><a href="#" class="text-white">Link 2</a></li>
-                    <li><a href="#" class="text-white">Link 3</a></li>
-                    <li><a href="#" class="text-white">Link 4</a></li>
-                </ul>
-            </div>
-            <!-- Column 3: Legal Info -->
-            <div class="col-md-4 text-center text-md-start">
-                <h5>Legal Info</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#" class="text-white">Legal Link 1</a></li>
-                    <li><a href="#" class="text-white">Legal Link 2</a></li>
-                    <li><a href="#" class="text-white">Legal Link 3</a></li>
-                    <li><a href="#" class="text-white">Legal Link 4</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
+<footer class="bg-dark text-white py-4" th:insert="~{public/fragments/footer}"></footer>
 
-
-<!-- Add this modal at the end of the body -->
-<div class="modal fade" id="budgetComparisonModal" tabindex="-1" aria-labelledby="budgetComparisonModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="budgetComparisonModalLabel">Budget Comparison</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <table id="budgetTable" class="display" style="width:100%">
-                    <thead>
-                    <tr>
-                        <th>School Name</th>
-                        <th>Budget (2024)</th>
-                        <th>Budget (2025)</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Elementary School A</td>
-                        <td>$1,400,000</td>
-                        <td>$1,400,000</td>
-                    </tr>
-                    <tr>
-                        <td>Middle School B</td>
-                        <td>$2,000,000</td>
-                        <td>$2,200,000</td>
-                    </tr>
-                    <tr>
-                        <td>High School C</td>
-                        <td>$3,500,000</td>
-                        <td>$3,700,000</td>
-                    </tr>
-                    <tr>
-                        <td>High School C</td>
-                        <td>$3,500,000</td>
-                        <td>$3,700,000</td>
-                    </tr>
-                    <tr>
-                        <td>High School C</td>
-                        <td>$3,500,000</td>
-                        <td>$3,700,000</td>
-                    </tr>
-                    <tr>
-                        <td>High School C</td>
-                        <td>$3,500,000</td>
-                        <td>$3,700,000</td>
-                    </tr>
-                    <tr>
-                        <td>High School C</td>
-                        <td>$3,500,000</td>
-                        <td>$3,700,000</td>
-                    </tr>
-                    <tr>
-                        <td>High School C</td>
-                        <td>$3,500,000</td>
-                        <td>$3,700,000</td>
-                    </tr>
-                    <tr>
-                        <td>High School C</td>
-                        <td>$3,500,000</td>
-                        <td>$3,700,000</td>
-                    </tr>
-                    <tr>
-                        <td>High School C</td>
-                        <td>$3,500,000</td>
-                        <td>$3,700,000</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div class="container mt-5">
-                    <h2>Totals</h2>
-                    <canvas id="budgetPieChart"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--Budget Comparison Modal-->
+<div class="modal fade"
+     id="budgetComparisonModal"
+     tabindex="-1"
+     aria-labelledby="budgetComparisonModalLabel"
+     aria-hidden="true"
+     th:insert="~{public/fragments/budgetModal}">
 </div>
 <!-- Four Year Blueprint Modal -->
-<div class="modal fade" id="fourYearBlueprintModal" tabindex="-1" aria-labelledby="fourYearBlueprintModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="fourYearBlueprintModalLabel">Four Year Blueprint</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <h2>District's Four Year Plan</h2>
-                <p>
-                    The Clark County School District's Four Year Blueprint outlines strategic initiatives to improve
-                    education quality, enhance student outcomes, and foster community engagement. Key focus areas
-                    include:
-                </p>
-                <ul>
-                    <li>Improving graduation rates through targeted interventions and support programs.</li>
-                    <li>Expanding access to STEM and arts education across all grade levels.</li>
-                    <li>Enhancing teacher training and professional development opportunities.</li>
-                    <li>Investing in modern technology and infrastructure to support 21st-century learning.</li>
-                    <li>Strengthening partnerships with parents, businesses, and community organizations.</li>
-                </ul>
-                <p>
-                    This plan reflects the district's commitment to transparency, accountability, and continuous
-                    improvement to ensure every student has the opportunity to succeed.
-                </p>
-            </div>
-        </div>
-    </div>
+<div class="modal fade"
+     id="fourYearBlueprintModal"
+     tabindex="-1"
+     aria-labelledby="fourYearBlueprintModalLabel"
+     aria-hidden="true"
+     th:insert="~{public/fragments/blueprint}">
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
-<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script src="js/charts.js"></script>
-<script src="js/datatables.js"></script>
-<script>
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-    }
-</script>
+
 </body>
 </html>
