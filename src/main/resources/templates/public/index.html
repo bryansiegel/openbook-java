@@ -40,15 +40,9 @@
 
 <!-- Hero Section -->
 <section class="bg-primary text-white text-center py-5" style="background-color: #0D3A5E !important;">
-    <div class="container">
-        <h1 class="display-4">What is Openbook?</h1>
-
-        <p class="lead">Open Book is an interactive online tool that provides the public with clear, accessible insight
-            into the Clark County School District’s (CCSD) budget and financial information. Designed to promote
-            transparency and accountability, Open Book allows users to explore how CCSD allocates and spends funds
-            across schools, departments, and programs. With user-friendly charts and detailed breakdowns, the platform
-            makes it easy for community members, parents, and stakeholders to stay informed about the district’s
-            financial priorities and decisions.</p>
+    <div class="container" th:each="cms : ${cms}">
+        <h1 class="display-4" th:text="${cms.headerTitle}"></h1>
+        <p class="lead" th:text="${cms.headerParagraph}"></p>
     </div>
 </section>
 
@@ -67,24 +61,14 @@
 
 <!-- Main Content -->
 <section>
-    <div class="container p-5">
+    <div class="container p-5" th:each="cms : ${cms}">
         <div class="row">
             <div class="col p-3">
-                <h1>A District on the Rise</h1>
+                <h1 th:text="${cms.introTitle}"></h1>
                 <div style="border-color:#F6BB39;border-width: 4px !important;border-bottom-style: solid;max-width:265px;margin-bottom:20px;"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel metus tellus. Curabitur a
-                    volutpat dolor. Donec eu rhoncus augue. Mauris a pellentesque massa. Quisque suscipit facilisis
-                    quam, vel rhoncus nibh imperdiet sed. Nullam auctor gravida elit, vitae cursus orci consequat
-                    eget. Nunc a eleifend quam, nec gravida risus. Donec tincidunt metus lorem, et commodo urna
-                    rhoncus ut. Maecenas a quam ante. Sed mattis molestie urna, nec auctor magna vulputate nec.
-                    Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                </p>
-                <p style="color:rgb(9, 79, 163); font-size:52px;font-weight:bold;">
-                    89.4%
-                </p>
-                <p style="color:darkgrey;font-weight:bold;">
-                    Graduated in 2023
-                </p>
+                <p th:text="${cms.introParagraph}"></p>
+                <p style="color:rgb(9, 79, 163); font-size:52px;font-weight:bold;" th:text="${cms.introNumber}"></p>
+                <p style="color:darkgrey;font-weight:bold;" th:text="${cms.introSentenceUnderNumber}"></p>
             </div>
             <div class="col p-3">
                 <!--                    Charts-->
@@ -97,18 +81,13 @@
 </section>
 <hr>
 <section>
-    <div class="container p-5">
+    <div class="container p-5" th:each="cms : ${cms}">
         <div class="row">
             <div class="col p-3">
-                <h2>Four Year BluePrint</h2>
+                <h2 th:text="${cms.bluePrintTitle}"></h2>
                 <div style="border-color:#F6BB39;border-width: 4px !important;border-bottom-style: solid;max-width:265px;margin-bottom:20px;"></div>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel metus tellus. Curabitur a
-                    volutpat dolor. Donec eu rhoncus augue. Mauris a pellentesque massa. Quisque suscipit facilisis
-                    quam, vel rhoncus nibh imperdiet sed. Nullam auctor gravida elit, vitae cursus orci consequat
-                    eget. Nunc a eleifend quam, nec gravida risus. Donec tincidunt metus lorem, et commodo urna
-                    rhoncus ut. Maecenas a quam ante. Sed mattis molestie urna, nec auctor magna vulputate nec.
-                    Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                <p th:text="${cms.blueprintParagraph}"></p>
                 <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fourYearBlueprintModal">Read
                     More
                 </button>
@@ -117,40 +96,45 @@
                 <h3 class="pb-3 grey">Strategic Initiatives</h3>
 
                 <div>
-                    <h6 style="border-bottom: 1px solid lightgrey; border-left: 1px solid lightgrey; padding-bottom: 10px; padding-left: 10px; padding-top: 5px; font-size: 16px;"
-                        data-asw-orgfontsize="16">Initiative <span style="float: right; font-size: 16px;"
-                                                                   data-asw-orgfontsize="16"><a href=""
-                                                                                                data-asw-orgfontsize="16"
-                                                                                                style="font-size: 16px;"><i
-                            class="fa-solid fa-arrow-right"></i></a></span>1
+                    <h6 style="border-bottom: 1px solid lightgrey; border-left: 1px solid lightgrey; padding-bottom: 10px; padding-left: 10px; padding-top: 5px; font-size: 16px;" ata-asw-orgfontsize="16">
+                        <span  th:text="${cms.initiativeOne}"></span>
+                        <span style="float: right; font-size: 16px;" data-asw-orgfontsize="16" >
+                            <a href="" data-asw-orgfontsize="16" style="font-size: 16px;">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </span>
                     </h6>
-                    <h6 style="border-bottom: 1px solid lightgrey; border-left: 1px solid lightgrey; padding-bottom: 10px; padding-left: 10px; padding-top: 5px; font-size: 16px;"
-                        data-asw-orgfontsize="16">Initiative <span style="float: right; font-size: 16px;"
-                                                                   data-asw-orgfontsize="16"><a href=""
-                                                                                                data-asw-orgfontsize="16"
-                                                                                                style="font-size: 16px;"><i
-                            class="fa-solid fa-arrow-right"></i></a></span>1
+                    <h6 style="border-bottom: 1px solid lightgrey; border-left: 1px solid lightgrey; padding-bottom: 10px; padding-left: 10px; padding-top: 5px; font-size: 16px;" data-asw-orgfontsize="16">
+                        <span  th:text="${cms.initiativeTwo}"></span>
+                        <span style="float: right; font-size: 16px;" data-asw-orgfontsize="16">
+                            <a href="" data-asw-orgfontsize="16" style="font-size: 16px;">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </span>
                     </h6>
-                    <h6 style="border-bottom: 1px solid lightgrey; border-left: 1px solid lightgrey; padding-bottom: 10px; padding-left: 10px; padding-top: 5px; font-size: 16px;"
-                        data-asw-orgfontsize="16">Initiative <span style="float: right; font-size: 16px;"
-                                                                   data-asw-orgfontsize="16"><a href=""
-                                                                                                data-asw-orgfontsize="16"
-                                                                                                style="font-size: 16px;"><i
-                            class="fa-solid fa-arrow-right"></i></a></span>1
+                    <h6 style="border-bottom: 1px solid lightgrey; border-left: 1px solid lightgrey; padding-bottom: 10px; padding-left: 10px; padding-top: 5px; font-size: 16px;" data-asw-orgfontsize="16">
+                        <span  th:text="${cms.initiativeThree}"></span>
+                        <span style="float: right; font-size: 16px;" data-asw-orgfontsize="16">
+                            <a href="" data-asw-orgfontsize="16" style="font-size: 16px;">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </span>
                     </h6>
-                    <h6 style="border-bottom: 1px solid lightgrey; border-left: 1px solid lightgrey; padding-bottom: 10px; padding-left: 10px; padding-top: 5px; font-size: 16px;"
-                        data-asw-orgfontsize="16">Initiative <span style="float: right; font-size: 16px;"
-                                                                   data-asw-orgfontsize="16"><a href=""
-                                                                                                data-asw-orgfontsize="16"
-                                                                                                style="font-size: 16px;"><i
-                            class="fa-solid fa-arrow-right"></i></a></span>1
+                    <h6 style="border-bottom: 1px solid lightgrey; border-left: 1px solid lightgrey; padding-bottom: 10px; padding-left: 10px; padding-top: 5px; font-size: 16px;" data-asw-orgfontsize="16">
+                        <span  th:text="${cms.initiativeFour}"></span>
+                        <span style="float: right; font-size: 16px;" data-asw-orgfontsize="16">
+                            <a href="" data-asw-orgfontsize="16" style="font-size: 16px;">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </span>
                     </h6>
-                    <h6 style="border-bottom: 1px solid lightgrey; border-left: 1px solid lightgrey; padding-bottom: 10px; padding-left: 10px; padding-top: 5px; font-size: 16px;"
-                        data-asw-orgfontsize="16">Initiative <span style="float: right; font-size: 16px;"
-                                                                   data-asw-orgfontsize="16"><a href=""
-                                                                                                data-asw-orgfontsize="16"
-                                                                                                style="font-size: 16px;"><i
-                            class="fa-solid fa-arrow-right"></i></a></span>1
+                    <h6 style="border-bottom: 1px solid lightgrey; border-left: 1px solid lightgrey; padding-bottom: 10px; padding-left: 10px; padding-top: 5px; font-size: 16px;" data-asw-orgfontsize="16">
+                        <span  th:text="${cms.initiativeFive}"></span>
+                        <span style="float: right; font-size: 16px;" data-asw-orgfontsize="16">
+                            <a href="" data-asw-orgfontsize="16" style="font-size: 16px;">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </span>
                     </h6>
                 </div>
             </div>
