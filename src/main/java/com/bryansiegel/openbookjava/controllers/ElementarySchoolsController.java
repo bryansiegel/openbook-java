@@ -18,7 +18,6 @@ public class ElementarySchoolsController {
     private final ElementarySchoolsRepo elementarySchoolsRepo;
 
 
-
     @Autowired
     public ElementarySchoolsController(ElementarySchoolsRepo elementarySchoolsRepo) {
         this.elementarySchoolsRepo = elementarySchoolsRepo;
@@ -36,7 +35,7 @@ public class ElementarySchoolsController {
 
     //admin/create
     @GetMapping("/admin/elementary-schools/create")
-    public String create(ElementarySchoolsRepo elementarySchoolsRepo, Authentication authentication,Model model) {
+    public String create(ElementarySchoolsRepo elementarySchoolsRepo, Authentication authentication, Model model) {
         model.addAttribute("elementarySchools", elementarySchoolsRepo);
         model.addAttribute("user", authentication.getName());
 
