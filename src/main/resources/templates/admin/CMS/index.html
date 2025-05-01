@@ -249,8 +249,12 @@
     }
 </script>
 
+
+
+<footer th:insert="~{admin/fragments/footer}"></footer>
+
 <!--Floating Bar-->
-<div style="position: fixed; bottom: 0; width: 100%; background-color: #eeeeee; padding: 10px; box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);">
+<div class="footer-floating-bar">
     <div class="container d-flex justify-content-center">
         <button class="btn btn-lg btn-primary me-2">Save</button>
         <button class="btn btn-lg btn-secondary">Cancel</button>
@@ -258,5 +262,3 @@
 </div>
 </body>
 </html>
-
-<footer th:insert="~{admin/fragments/footer}"></footer>
