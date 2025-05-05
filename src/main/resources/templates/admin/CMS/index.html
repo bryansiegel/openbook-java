@@ -14,7 +14,7 @@
      class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top bg-white"></nav>
 
 <!-- Hero Section -->
-<section class="bg-primary py-5 bg-blue">
+<div class="bg-primary py-5 bg-blue">
     <div class="container">
         <form th:action="@{/admin/cms/save}" th:object="${cms}" method="post">
             <input type="hidden" th:field="*{id}" />
@@ -32,6 +32,7 @@
                               placeholder="Header Paragraph"></textarea>
                 </div>
             </div>
+
 
             <div class="container p-5">
                 <div class="row">
@@ -61,6 +62,7 @@
                         </div>
                         </p>
                     </div>
+
                 </div>
             </div>
 
@@ -82,20 +84,54 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="col p-3">
+                    <h3 class="pb-3 grey text-white">Strategic Initiatives</h3>
 
-            <div class="footer-floating-bar">
-                <div class="container d-flex justify-content-center">
-                    <button type="submit" class="btn btn-lg btn-primary me-2">Save</button>
-                    <button type="reset" class="btn btn-lg btn-secondary">Cancel</button>
+                    <div>
+                        <h6 class="initiatives wysiwyg-editor-outline">
+                            <input type="text"
+                                   th:field="*{initiativeOne}" placeholder="Initiative One" class="form-control">
+                        </h6>
+                        <h6 class="initiatives wysiwyg-editor-outline">
+                            <input type="text"
+                                   th:field="*{initiativeTwo}"
+                                   placeholder="Initiative Two" class="form-control"/>
+                        </h6>
+                        <h6 class="initiatives wysiwyg-editor-outline">
+                            <input type="text"
+                                   th:field="*{initiativeThree}"
+                                   placeholder="Initiative Three" class="form-control"/>
+                        </h6>
+                        <h6 class="initiatives wysiwyg-editor-outline">
+                            <input type="text"
+                                   th:field="*{initiativeFour}"
+                                   placeholder="Initiative Four" class="form-control"/>
+                        </h6>
+                        <h6 class="initiatives wysiwyg-editor-outline">
+                            <input type="text"
+                                   th:field="*{initiativeFive}"
+                                   placeholder="Initiative Five" class="form-control"/>
+                        </h6>
+                    </div>
                 </div>
             </div>
-        </form>
+
+
     </div>
-</section>
+</div>
 
 <!-- Footer -->
 <footer class="bg-dark text-white py-4" th:insert="~{public/fragments/footer}"></footer>
+
+<div class="footer-floating-bar">
+    <div class="container d-flex justify-content-center">
+        <button type="submit" class="btn btn-lg btn-primary me-2">Save</button>
+        <button type="reset" class="btn btn-lg btn-secondary">Cancel</button>
+    </div>
+</div>
+</form>
+
+
 <!-- Include Summernote CSS and JS -->
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
