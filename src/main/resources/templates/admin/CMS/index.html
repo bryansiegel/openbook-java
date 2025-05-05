@@ -17,6 +17,7 @@
 <div class="bg-primary py-5 bg-blue">
     <div class="container">
         <form th:action="@{/admin/cms/save}" th:object="${cms}" method="post">
+            <div style="background-color: #0D3A5E !important;">
             <input type="hidden" th:field="*{id}" />
             <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
             <h1 class="display-4 text-white text-center mb-5">
@@ -26,6 +27,7 @@
                 </div>
             </h1>
 
+            </div>
             <div class="bg-white">
                 <div class="wysiwyg-editor-outline">
                     <textarea id="wysiwyg-editor" rows="10" cols="70" th:field="*{headerParagraph}" class="form-control wysiwyg-editor"
