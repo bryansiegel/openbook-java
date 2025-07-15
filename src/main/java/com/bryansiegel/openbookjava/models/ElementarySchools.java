@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Column;
 
 import java.math.BigDecimal;
 
@@ -15,6 +16,7 @@ public class ElementarySchools {
     private Long id;
 
     private String schoolName;
+    @Column(name = "school_year")
     private int year;
     private BigDecimal appropriation;
     private BigDecimal actual;
